@@ -33,9 +33,6 @@ namespace MetaDataStringEditor {
         private void ReadHeader() {
             Logger.I("读取头部");
             uint vansity = reader.ReadUInt32();
-            if (vansity != 0xFAB11BAF) {
-                throw new Exception("标志检查不通过");
-            }
             int version = reader.ReadInt32();
             stringLiteralOffset = reader.ReadUInt32();      // 列表区的位置，后面不会改了
             stringLiteralCount = reader.ReadUInt32();       // 列表区的大小，后面不会改了
